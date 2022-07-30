@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e1b5626669.js" crossorigin="anonymous"></script>
+</head>
+<body style=" background-color:seagreen">
+
+<h1 style=" color: coral; text-shadow: 1px 1px 5px #c1b3f5; font-size: 6.5rem; text-align: center" >Who Said That?!?</h1>
+
+
+
+
+
+
+
+
+<div class="modal-container">
+    <form  action="/quotes" method="post" name="postform">
+
+        <input placeholder="name" style="font-size: 2rem;"  type="text" name="name">
+
+        <input placeholder="quote" style="font-size: 2em" type="text" name="quote">
+
+        <button style=" margin:2rem auto; font-size: 2rem" type="submit">submit</button>
+
+    </form>
+
+</div>
+
+
+
+<div style="display: flex; justify-content: center; align-items: center">
+
+    <div style="display:flex;flex-direction: row; ; height: 50vh;width: 100vw;background-color: aliceblue" id="quote-container">
+
+        <div style="display: flex; width: 100%; padding: 2rem; flex-direction: column; overflow: scroll" id="quote-content">
+
+
+
+            <ul style="list-style: none">
+
+
+                <% for(let i = 0; i < quotes.length; i++){%>
+                    <div>
+                        <li class="li-name" style="color: #e1501a; display: inline-flex; font-family: 'Oswald'; font-size: 3.5rem">  <%=  quotes[i].name %> </li>
+                        <i style="display: inline-flex" id="edit-name" class="fa-solid fa-pen"></i>
+                        <i style="display: inline-flex" class="fa-solid fa-trash-can"></i>
+                    </div>
+                    <li style=" margin-bottom:2rem; width: auto; color: black;text-align: left; font-weight: 500; font-size:1.8rem; font-family: 'Poppins';"> "<%=  quotes[i].quote %>" </li>
+                    <br>
+
+                <%}%>
+
+            </ul>
+
+
+        </div>
+
+    </div>
+
+
+
+</div>
+<div class="modal-container">
+
+    <div id="modal-content">
+
+
+        <form action="/quotes" name="updateform">
+
+            <input id="updateName" placeholder="update name" name="updateName" type="text">
+
+            <input id="updateQuote" placeholder="update quote"name="updateQuote" type="text">
+
+
+        </form>
+                <button id="btn-update" style="display: block; margin:2rem auto; font-size: 1.5rem" type="submit"> update </button>
+
+
+    </div>
+
+
+</div>
+<button id="delete-button" style="display: block; margin: 0 auto; font-size: 3rem" type="submit" > delete </button>
+
+
+
+
+<script src="/main.js"></script>
+</body>
+</html>
