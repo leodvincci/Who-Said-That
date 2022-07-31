@@ -25,6 +25,11 @@ liValue.forEach( l => {
                 .then(r => {console.log("Hello")} )
 
         }
+        if(l.style.color != "red"){
+            l.style.color = "red";
+        }else{
+            l.style.color="#4500ff"
+        }
     })
 })
 
